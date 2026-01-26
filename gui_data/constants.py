@@ -665,7 +665,7 @@ DEFAULT_DATA = {
         'is_testing_audio': False,#
         'is_auto_update_model_params': True,#
         'is_add_model_name': False,
-        'is_accept_any_input': False,
+        'is_accept_any_input': True,
         'is_save_to_input_path': False,
         'is_task_complete': False,
         'is_normalization': False,
@@ -675,7 +675,7 @@ DEFAULT_DATA = {
         'mp3_bit_set': '320k',#
         'semitone_shift': '0',#
         'save_format': WAV,
-        'wav_type_set': 'PCM_16',
+        'wav_type_set': 'PCM_24',
         'device_set': DEFAULT,
         'user_code': '',
         'export_path': '',
