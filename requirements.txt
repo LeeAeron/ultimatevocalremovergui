@@ -41,4 +41,5 @@ scikit-learn
 huggingface_hub
 gradio==3.50.2
 beartype
-rotary-embedding-torch
+rotary-embedding-torch==0.8.9
+setuptools<81
