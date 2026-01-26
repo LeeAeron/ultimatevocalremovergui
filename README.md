@@ -15,7 +15,7 @@ This application uses state-of-the-art source separation models to remove vocals
 
 ## Installation
 
-This fork will be provided with only *.bat installer/updater/starter file, that will download and install all components and build Portable UVR engine.
+This fork will be provided with only *.bat installer/re-installer/starter file, that will download and install all components and build Portable UVR engine.
 
 ### Windows Installation
 
@@ -25,8 +25,15 @@ This fork will be provided with only *.bat installer/updater/starter file, that 
     - Application functionality for systems running Windows 7 or lower is not guaranteed.
 
 - Download the UVR .bat installer for Windows in releases.
-- Place .bat file in any directory in the Root of any partition. Launch it. Choose INSTALL (2), and .bat file will download and install locally latest UVR Portable engine.
-- After install process finished, select START (1), UVR will launch.
+- Place the BAT-file in any folder in the root of any partition with a short Latin name without spaces or special characters and run it.
+- Select INSTALL (2)
+- The BAT file will download and install the fully portable version of UVR with Torch 2.10.0 Cuda 12.8 inside, it's own FFMPEG, and ask you to restart the BAT file. Press any key and restart the BAT file.
+- Run it via START (1).
+
+### Very important
+🔥 DOWNLOAD MODELS MANUALLY VIA THE SETTINGS MENU.
+🔥 Models folder: \UltimateVocalRemover\models. You can save them before reinstalling using step (2).
+🔥 Reinstalling using step (2) WILL COMPLETELY DELETE ALL FOLDERS ON THE PORTABLE DEVICE, LEAVING ONLY THE .BAT FILE!
 
 ### Other Application Notes
 - Nvidia GTX 1060 6GB is the minimum requirement for GPU conversions.
