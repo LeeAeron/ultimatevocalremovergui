@@ -24,11 +24,6 @@ Performance:
 ~ Model load times are faster.
 ~ Importing/exporting audio files is faster.
 
-MacOS M1 Notes:
-
-~ The GPU Conversion checkbox will enable MPS for GPU acceleration. However,
-   only the VR Architecture models are currently compatible with it.
-
 New Options:
 
 ~ Select Saved Settings option - Allows the user to save the current settings 

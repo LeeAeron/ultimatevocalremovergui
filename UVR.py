@@ -258,10 +258,6 @@ FONT_MAPPER = {MAIN_FONT_NAME:FONT_PATH,
                SEC_FONT_NAME:SEC_FONT_PATH}
 
 #Other
-COMPLETE_CHIME = os.path.join(BASE_PATH, 'gui_data', 'complete_chime.wav')
-FAIL_CHIME = os.path.join(BASE_PATH, 'gui_data', 'fail_chime.wav')
-CHANGE_LOG = os.path.join(BASE_PATH, 'gui_data', 'change_log.txt')
-
 DENOISER_MODEL_PATH = os.path.join(VR_MODELS_DIR, 'UVR-DeNoise-Lite.pth')
 DEVERBER_MODEL_PATH = os.path.join(VR_MODELS_DIR, 'UVR-DeEcho-DeReverb.pth')
 
@@ -3256,10 +3252,6 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         reset_all_app_settings_Button = ttk.Button(settings_menu_main_Frame, text=RESET_ALL_SETTINGS_TO_DEFAULT_TEXT, command=lambda:self.load_to_default_confirm(), width=SETTINGS_BUT_WIDTH)#pop_up_change_model_defaults
         reset_all_app_settings_Button.grid(pady=MENU_PADDING_1)
         
-        if is_windows:
-            restart_app_Button = ttk.Button(settings_menu_main_Frame, text=RESTART_APPLICATION_TEXT, command=lambda:self.restart())
-            restart_app_Button.grid(pady=MENU_PADDING_1)
-
         delete_your_settings_Label = self.menu_title_LABEL_SET(settings_menu_main_Frame, DELETE_USER_SAVED_SETTING_TEXT)
         delete_your_settings_Label.grid(pady=MENU_PADDING_2)
         self.help_hints(delete_your_settings_Label, text=DELETE_YOUR_SETTINGS_HELP)
@@ -3268,19 +3260,6 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         delete_your_settings_Option.grid(padx=20,pady=MENU_PADDING_1)
         self.deletion_list_fill(delete_your_settings_Option, option_var, SETTINGS_CACHE_DIR, SELECT_SAVED_SETTING, menu_name='deletesetting')
 
-        app_update_Label = self.menu_title_LABEL_SET(settings_menu_main_Frame, APPLICATION_UPDATES_TEXT)
-        app_update_Label.grid(pady=MENU_PADDING_2)
-        
-        self.app_update_button = ttk.Button(settings_menu_main_Frame, textvariable=self.app_update_button_Text_var, width=SETTINGS_BUT_WIDTH-2, command=lambda:self.pop_up_update_confirmation())
-        self.app_update_button.grid(pady=MENU_PADDING_1)
-        
-        self.app_update_status_Label = tk.Label(settings_menu_main_Frame, textvariable=self.app_update_status_Text_var, padx=3, pady=3, font=(MAIN_FONT_NAME,  f"{FONT_SIZE_4}"), width=UPDATE_LABEL_WIDTH, justify="center", relief="ridge", fg="#13849f")
-        self.app_update_status_Label.grid(pady=20)
-        
-        donate_Button = ttk.Button(settings_menu_main_Frame, image=self.donate_img, command=lambda:webbrowser.open_new_tab(DONATE_LINK_BMAC))
-        donate_Button.grid(pady=MENU_PADDING_2)
-        self.help_hints(donate_Button, text=DONATE_HELP)
-        
         close_settings_win_Button = ttk.Button(settings_menu_main_Frame, text=CLOSE_WINDOW, command=lambda:close_window())
         close_settings_win_Button.grid(pady=MENU_PADDING_1)      
           
@@ -3409,9 +3388,6 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
 
         self.refresh_list_Button = ttk.Button(settings_menu_download_center_Frame, text=REFRESH_LIST_TEXT, command=lambda:self.online_data_refresh(refresh_list_Button=True))#, command=refresh_list)
         self.refresh_list_Button.grid(pady=MENU_PADDING_1)
-        
-        self.download_key_Button = ttk.Button(settings_menu_download_center_Frame, image=self.key_img, command=lambda:self.pop_up_user_code_input())
-        self.download_key_Button.grid(pady=MENU_PADDING_1)
                             
         self.manual_download_Button = ttk.Button(settings_menu_download_center_Frame, text=TRY_MANUAL_DOWNLOAD_TEXT, command=self.menu_manual_downloads)
         self.manual_download_Button.grid(pady=MENU_PADDING_1)
@@ -3419,8 +3395,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.download_center_Buttons = (self.model_download_vr_Button,
                                         self.model_download_mdx_Button,
                                         self.model_download_demucs_Button,
-                                        self.download_Button,
-                                        self.download_key_Button)
+                                        self.download_Button)
         
         self.download_lists = (self.model_download_vr_Option,
                                self.model_download_mdx_Option,
