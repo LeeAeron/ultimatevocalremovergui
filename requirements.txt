@@ -30,7 +30,6 @@ wget==3.2
 samplerate==0.1.0
 screeninfo==0.8.1
 diffq
-simpleaudio
 onnx
 onnxruntime-gpu
 onnx2pytorch
