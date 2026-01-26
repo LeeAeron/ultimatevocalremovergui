@@ -32,8 +32,11 @@ This fork will be provided with only *.bat installer/re-installer/starter file, 
 
 ### Very important
 🔥 DOWNLOAD MODELS MANUALLY VIA THE SETTINGS MENU.
+
 🔥 Models folder: \UltimateVocalRemover\models. You can save them before reinstalling using step (2).
+
 🔥 Reinstalling using step (2) WILL COMPLETELY DELETE ALL FOLDERS ON THE PORTABLE DEVICE, LEAVING ONLY THE .BAT FILE!
+
 
 ### Other Application Notes
 - Nvidia GTX 1060 6GB is the minimum requirement for GPU conversions.
