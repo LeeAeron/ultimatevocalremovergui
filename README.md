@@ -1,5 +1,5 @@
-# Ultimate Vocal Remover GUI Portable Engine Installer
-<img src="https://raw.githubusercontent.com/LeeAeron/ultimatevocalremovergui/main/gui_data/img/UVR_v5.7.png?raw=true" />
+# Ultimate Vocal Remover GUI Portable Engine Installer for nVidia GTX10xx-16xx and RTX20xx-50xx GPUs
+<img src="https://raw.githubusercontent.com/LeeAeron/ultimatevocalremovergui/main/gui_data/img/UVR.png?raw=true" />
 
 [![Release](https://img.shields.io/github/release/LeeAeron/ultimatevocalremovergui.svg)](https://github.com/LeeAeron/ultimatevocalremovergui/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/LeeAeron/ultimatevocalremovergui/total.svg)](https://github.com/LeeAeron/ultimatevocalremovergui/releases)
