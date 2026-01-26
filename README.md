@@ -2,7 +2,6 @@
 <img src="https://raw.githubusercontent.com/LeeAeron/ultimatevocalremovergui/main/gui_data/img/UVR.png?raw=true" />
 
 [![Release](https://img.shields.io/github/release/LeeAeron/ultimatevocalremovergui.svg)](https://github.com/LeeAeron/ultimatevocalremovergui/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/LeeAeron/ultimatevocalremovergui/total.svg)](https://github.com/LeeAeron/ultimatevocalremovergui/releases)
 
 ## About
 
