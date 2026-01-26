@@ -30,7 +30,7 @@ from tkinter.font import Font
 from tkinter import filedialog
 from tkinter import messagebox
 from collections import Counter
-from __version__ import VERSION, PATCH, PATCH_MAC, PATCH_LINUX
+from __version__ import VERSION, PATCH
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
@@ -100,7 +100,6 @@ if OPERATING_SYSTEM=="Darwin":
     OPEN_FILE_func = lambda input_string:subprocess.Popen(["open", input_string])
     dnd_path_check = MAC_DND_CHECK
     banner_placement = -8
-    current_patch = PATCH_MAC
     is_windows = False
     is_macos = True
     right_click_button = '<Button-2>'
@@ -108,7 +107,6 @@ if OPERATING_SYSTEM=="Darwin":
 elif OPERATING_SYSTEM=="Linux":
     OPEN_FILE_func = lambda input_string:subprocess.Popen(["xdg-open", input_string])
     dnd_path_check = LINUX_DND_CHECK
-    current_patch = PATCH_LINUX
     is_windows = False
     is_macos = False
     right_click_button = '<Button-3>'
@@ -3878,7 +3876,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         
         credit_label(place=2,
                      frame=credits_Frame,
-                     text="Anjok07\nAufr33",
+                     text="Anjok07\nAufr33\LeeAeron",
                      is_top=True)
         
         section_title_Label(place=3,
@@ -3930,9 +3928,9 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
 
         Link(place=4, 
              frame=more_info_tab_Frame, 
-             text="Ultimate Vocal Remover (Official GitHub)", 
-             link="https://github.com/Anjok07/ultimatevocalremovergui", 
-             description="You can find updates, report issues, and give us a shout via our official GitHub.",
+             text="Ultimate Vocal Remover (Official fork at GitHub)", 
+             link="https://github.com/LeeAeron/ultimatevocalremovergui", 
+             description="You can find updates, report issues, and give us a shout via my official fork at GitHub.",
              font=FONT_SIZE_1)
         
         Link(place=8, 
@@ -5131,7 +5129,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
     #--Download Center Methods--    
 
     def online_data_refresh(self, user_refresh=True, confirmation_box=False, refresh_list_Button=False, is_start_up=False, is_download_complete=False):
-        """Checks for application updates"""
+        """Checks for application updates (always shows latest version installed)"""
         
         def online_check():
             if not is_start_up:
@@ -5160,74 +5158,43 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                     self.download_list_state()
                     for widget in self.download_center_Buttons:
                         widget.configure(state=tk.NORMAL)
-                    
+
                 if refresh_list_Button:
                     self.download_progress_info_var.set('Download List Refreshed!')
 
-                if OPERATING_SYSTEM=="Darwin":
-                    self.lastest_version = self.online_data["current_version_mac"]
-                elif OPERATING_SYSTEM=="Linux":
-                    self.lastest_version = self.online_data["current_version_linux"]
-                else:
-                    self.lastest_version = self.online_data["current_version"]
-                    
-                if self.lastest_version == current_patch and not is_start_up:
+                self.lastest_version = current_patch
+                if not is_start_up:
                     self.app_update_status_Text_var.set('UVR Version Current')
-                else:
-                    is_new_update = True
-                    is_beta_version = True if self.lastest_version == PREVIOUS_PATCH_WIN and BETA_VERSION in current_patch else False
-                    
-                    if not is_start_up:
-                        if is_beta_version:
-                            self.app_update_status_Text_var.set(f"Roll Back: {self.lastest_version}")
-                            self.app_update_button_Text_var.set(ROLL_BACK_TEXT)
-                        else:
-                            self.app_update_status_Text_var.set(f"Update Found: {self.lastest_version}")
-                            self.app_update_button_Text_var.set('Click Here to Update')
-                        
-                        if OPERATING_SYSTEM == "Windows":
-                            self.download_update_link_var.set('{}{}{}'.format(UPDATE_REPO, self.lastest_version, application_extension))
-                            self.download_update_path_var.set(os.path.join(BASE_PATH, f'{self.lastest_version}{application_extension}'))
-                        elif OPERATING_SYSTEM == "Darwin":
-                            self.download_update_link_var.set(UPDATE_MAC_ARM_REPO if SYSTEM_PROC == ARM or ARM in SYSTEM_ARCH else UPDATE_MAC_X86_64_REPO)
-                        elif OPERATING_SYSTEM == "Linux":
-                            self.download_update_link_var.set(UPDATE_LINUX_REPO)
-                    
-                    if not user_refresh:
-                        if not is_beta_version and not self.lastest_version == current_patch:
-                            self.command_Text.write(NEW_UPDATE_FOUND_TEXT(self.lastest_version))
-
+                    self.app_update_button_Text_var.set('Latest Version Installed')
 
                 is_update_params = self.is_auto_update_model_params if is_start_up else self.is_auto_update_model_params_var.get()
-                
                 if is_update_params and is_start_up or is_download_complete:
                     self.download_model_settings()
-                    
-                # if is_download_complete:
-                #     self.download_model_settings()
 
             except Exception as e:
                 self.offline_state_set(is_start_up)
                 is_new_update = False
-                
+
                 if user_refresh:
                     self.download_list_state(disable_only=True)
                     for widget in self.download_center_Buttons:
                         widget.configure(state=tk.DISABLED)
-                        
+
                 try:
                     self.error_log_var.set(error_text('Online Data Refresh', e))
                 except Exception as e:
                     print(e)
 
             return is_new_update
-            
+
         if confirmation_box:
             return online_check()
         else:
             self.current_thread = KThread(target=online_check)
-            self.current_thread.setDaemon(True) if not is_windows else None
+            if not is_windows:
+                self.current_thread.setDaemon(True)
             self.current_thread.start()
+
 
     def offline_state_set(self, is_start_up=False):
         """Changes relevant settings and "Download Center" buttons if no internet connection is available"""
