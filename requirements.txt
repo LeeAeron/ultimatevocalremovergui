@@ -40,3 +40,5 @@ numpy==1.23.5
 scikit-learn
 huggingface_hub
 gradio==3.50.2
+beartype
+rotary-embedding-torch
