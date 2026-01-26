@@ -33,8 +33,7 @@ diffq
 onnx==1.16.1
 onnxruntime-gpu==1.18.0
 onnx2pytorch
-SoundFile==0.11.0; sys_platform != 'darwin'
-PySoundFile==0.9.0.post1; sys_platform == 'darwin'
+soundfile>=0.12.1
 git+https://github.com/NathanEpstein/Dora.git
 numpy==1.26.4
 scikit-learn
