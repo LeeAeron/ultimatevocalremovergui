@@ -11,7 +11,7 @@ This application uses state-of-the-art source separation models to remove vocals
 - **Core Developers**
     - [Anjok07](https://github.com/anjok07)
     - [aufr33](https://github.com/aufr33)
-    - [LeeAeron] (https://github.com/LeeAeron)
+    - [LeeAeron](https://github.com/LeeAeron)
 
 ## Installation
 
