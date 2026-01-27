@@ -36,6 +36,12 @@ This fork will be provided with only *.bat installer/re-installer/starter file, 
 
 🔥 Reinstalling using step (2) WILL COMPLETELY DELETE ALL FOLDERS ON THE PORTABLE DEVICE, LEAVING ONLY THE .BAT FILE!
 
+### Update
+
+- Download minimum v5.7.1 .bat file, replace your old.
+- Select UPDATE (3) entry from menu. UVR will be updated from this Git.
+- Launch UVR as always
+- NOTE: If there's some files will be warned to be deleted from folders inside while update, please, delete them manually and repeat UPDATE (3)
 
 ### Other Application Notes
 - Nvidia GTX 1060 6GB is the minimum requirement for GPU conversions.
