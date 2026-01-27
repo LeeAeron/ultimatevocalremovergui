@@ -65,7 +65,8 @@ This fork will be provided with only *.bat installer/re-installer/starter file, 
 - Importing/exporting audio files is faster.
 
 
-📄 [View Changelog](https://github.com/LeeAeron/ultimatevocalremovergui/blob/main/CHANGELOG.md) 
+## 📄 Changelog
+[Changelog here](https://github.com/LeeAeron/ultimatevocalremovergui/blob/main/CHANGELOG.md) 
 
 
 ## 👉 Troubleshooting
