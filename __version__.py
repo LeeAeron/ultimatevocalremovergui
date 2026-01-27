@@ -1,3 +1,3 @@
-VERSION = 'v5.7.1'
+VERSION = 'v5.7.2'
 PATCH = 'UVR_Patch_12_8_24_23_30_BETA'
 
