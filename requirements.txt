@@ -7,7 +7,6 @@ einops>=0.7
 future==0.18.3
 julius==0.2.7
 kthread==0.2.3
-librosa==0.10.2
 llvmlite
 matchering==2.0.6
 ml_collections==0.1.1
@@ -32,8 +31,9 @@ screeninfo==0.8.1
 diffq
 onnx==1.16.1
 onnxruntime-gpu==1.23.2
+librosa==0.10.2.post1
+pip install soundfile==0.12.1
 onnx2pytorch
-SoundFile==0.13.1
 git+https://github.com/NathanEpstein/Dora.git
 numpy==1.26.4
 scikit-learn
