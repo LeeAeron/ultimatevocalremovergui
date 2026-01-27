@@ -31,7 +31,7 @@ samplerate==0.1.0
 screeninfo==0.8.1
 diffq
 onnx==1.16.1
-onnxruntime-gpu==1.18.0
+onnxruntime-gpu==1.23.2
 onnx2pytorch
 soundfile>=0.12.1
 git+https://github.com/NathanEpstein/Dora.git

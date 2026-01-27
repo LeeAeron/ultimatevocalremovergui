@@ -1,5 +1,8 @@
 #Changelog:
 
+# 2026/01/27(28) (v5.7.2)
+- fixed MDX processing / updated requirements
+
 # 2026/01/27(28) (v5.7.1)
 
 - fixed code for load Apollo models with new Torch
