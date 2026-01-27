@@ -107,7 +107,7 @@ The **Apollo model** code is [CC-BY-SA 4.0](LICENSE).
 
 - For anyone interested in the ongoing development of **Ultimate Vocal Remover GUI**, please send us a pull request, and we will review it. 
 - This project is 100% open-source and free for anyone to use and modify as they wish. 
-- We only maintain the development and support for the **Ultimate Vocal Remover GUI** and the models provided. 
+- I'm only maintain the development and support for the **Ultimate Vocal Remover GUI** and the models provided. 
 
 
 ## 📺 References
