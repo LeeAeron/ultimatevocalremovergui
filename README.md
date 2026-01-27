@@ -27,25 +27,25 @@ This fork will be provided with only *.bat installer/re-installer/starter file, 
 
 - Download the UVR .bat installer for Windows in releases.
 - Place the BAT-file in any folder in the root of any partition with a short Latin name without spaces or special characters and run it.
-- Select INSTALL (2)
-- The BAT file will download and install the fully portable version of UVR with Torch 2.10.0 Cuda 12.8 inside, it's own FFMPEG, and ask you to restart the BAT file. Press any key and restart the BAT file.
+- Select INSTALL (2) or (3) depending your GPU Card version.
+- The BAT file will download and install the fully portable version of UVR, own FFMPEG, and ask you to restart the BAT file. Press any key and restart the BAT file.
 - Run it via START (1).
 
 
 ### 🔥 Very important
 🔥 DOWNLOAD MODELS MANUALLY VIA THE SETTINGS MENU.
 
-🔥 Models folder: \UltimateVocalRemover\models. You can save them before reinstalling using step (2).
+🔥 Models folder: \UltimateVocalRemover\models. You can save them before reinstalling using step (2) or (3).
 
-🔥 Reinstalling using step (2) WILL COMPLETELY DELETE ALL FOLDERS ON THE PORTABLE DEVICE, LEAVING ONLY THE .BAT FILE!
+🔥 Reinstalling using step (2) or (3) WILL COMPLETELY DELETE ALL FOLDERS ON THE PORTABLE DEVICE, LEAVING ONLY THE .BAT FILE!
 
 
 ### 📦 Update
 
 - Download minimum v5.7.1 .bat file, replace your old.
-- Select UPDATE (3) entry from menu. UVR will be updated from this Git.
+- Select UPDATE (4) entry from menu. UVR will be updated from this Git.
 - Launch UVR as always
-➤ NOTE: If there's some files will be warned to be deleted from folders inside while update, please, delete them manually and repeat UPDATE (3)
+➤ NOTE: If there's some files will be warned to be deleted from folders inside while update, please, delete them manually and repeat UPDATE (4)
 
 
 ### 🖥 Other Application Notes
