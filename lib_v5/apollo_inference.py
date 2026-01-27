@@ -26,7 +26,7 @@ is_cuda_only = cuda_available and not directml_available
 is_gpu_available = cuda_available or directml_available or mps_available
 
 def load_audio(file_path):
-    audio, samplerate = librosa.load(file_path, mono=False, sr=44100)
+    audio, samplerate = librosa.load(file_path, sr=44100, mono=False)
     #print(f'INPUT audio.shape = {audio.shape} | samplerate = {samplerate}')
     #audio = dBgain(audio, -6)
     return torch.from_numpy(audio), samplerate

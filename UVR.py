@@ -2859,7 +2859,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         for i in audio_file:
             if os.path.isfile(i):
                 try:
-                    librosa.load(i, duration=3, mono=False, sr=44100) if not type(sample_path) is str else self.create_sample(i, sample_path)
+                    librosa.load(i, sr=44100, mono=False, duration=3) if not isinstance(sample_path, str) else self.create_sample(i, sample_path)
                     is_good = True
                 except Exception as e:
                     error_name = f'{type(e).__name__}'
@@ -2882,7 +2882,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                 track_length = int(f.duration)
         except Exception as e:
             print('Audioread failed to get duration. Trying Librosa...')
-            y, sr = librosa.load(audio_file, mono=False, sr=44100)
+            y, sr = librosa.load(audio_file, sr=44100, mono=False)
             track_length = int(librosa.get_duration(y=y, sr=sr))
         
         clip_duration = int(self.model_sample_mode_duration_var.get())
@@ -2897,7 +2897,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             offset_cut, clip_duration = 0, track_length
             name_apped = ''
 
-        sample = librosa.load(audio_file, offset=offset_cut, duration=clip_duration, mono=False, sr=44100)[0].T
+        sample = librosa.load(audio_file, sr=44100, mono=False, offset=offset_cut, duration=clip_duration)[0].T
         audio_sample = os.path.join(sample_path, f'{os.path.splitext(os.path.basename(audio_file))[0]}_{name_apped}sample.wav')
         sf.write(audio_sample, sample, 44100)
         

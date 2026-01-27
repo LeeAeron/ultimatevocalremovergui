@@ -2,7 +2,7 @@
 
 # 2026/01/27(28) (v5.7.2)
 - updated requirements
-- fixed MDX processing/VR-Architecture processing
+- fixed MDX processing/VR processing
 - fixed librosa calls in code
 
 # 2026/01/27(28) (v5.7.1)
