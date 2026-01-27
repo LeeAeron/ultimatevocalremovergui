@@ -2,7 +2,8 @@ import torch
 import torch.nn as nn
 from omegaconf.dictconfig import DictConfig
 
-torch.serialization.add_safe_globals([DictConfig])
+if hasattr(torch.serialization, 'add_safe_globals'):
+    torch.serialization.add_safe_globals([DictConfig])
 
 
 def _unsqueeze_to_3d(x):
