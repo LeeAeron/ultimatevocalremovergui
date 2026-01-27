@@ -1,0 +1,54 @@
+⚠️ℹ️RUS
+⚠️ℹ️ Для информации: 
+
+▪️RoFormer — это улучшенная архитектура трансформеров, которая использует Rotary Position Embedding (RoPE) для более эффективного кодирования позиции токенов в последовательности. Она позволяет моделям лучше учитывать как абсолютные, так и относительные зависимости между элементами текста и масштабироваться на длинные последовательности.
+
+▪️RoFormer — это модификация стандартного Transformer, предложенная в 2021 году исследователями Jianlin Su и коллегами.
+
+Основная инновация — Rotary Position Embedding (RoPE), метод, который кодирует позиционную информацию, вращая входные векторы в двумерном пространстве.
+
+▪️ Зачем нужен RoPE
+В классических трансформерах позиционная информация добавляется через фиксированные или обучаемые эмбеддинги.
+
+▪️ RoPE позволяет:
+
+Учитывать относительные позиции токенов, а не только абсолютные.
+
+Моделировать естественный спад зависимости между токенами по мере увеличения расстояния.
+
+Масштабироваться на длинные последовательности без потери качества.
+
+▪️ Применение
+Обработка текста: улучшение качества языковых моделей (например, в задачах машинного перевода, генерации текста).
+
+Музыка и аудио: RoFormer адаптируется для задач разделения источников звука (например, вокала и инструментов), где важно учитывать временные зависимости.
+
+Эффективные модели: RoPE хорошо работает с линейным self-attention, что делает обучение и инференс быстрее.
+
+
+⚠️ℹ️ ENG
+⚠️ℹ️ For your information:
+
+▪️RoFormer is an improved Transformer architecture that uses Rotary Position Embedding (RoPE) to more efficiently encode token positions in a sequence. This allows models to better account for both absolute and relative dependencies between text elements and scale to long sequences.
+
+▪️RoFormer is a modification of the standard Transformer, proposed in 2021 by researchers Jianlin Su and colleagues.
+
+The main innovation is Rotary Position Embedding (RoPE), a method that encodes positional information by rotating input vectors in two-dimensional space.
+
+▪️ Why RoPE?
+In classic Transformers, positional information is added through fixed or learnable embeddings.
+
+▪️ RoPE allows you to:
+
+Consider the relative positions of tokens, not just absolute ones.
+
+Model the natural decay of dependencies between tokens as distance increases.
+
+Scaling to long sequences without loss of quality.
+
+▪️ Applications
+Text processing: Improving the quality of language models (e.g., in machine translation and text generation tasks).
+
+Music and audio: RoFormer is adapted for audio source separation tasks (e.g., vocals and instruments), where temporal dependencies are important.
+
+Efficient models: RoPE works well with linear self-attention, which speeds up training and inference.
