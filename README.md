@@ -18,6 +18,8 @@ This application uses state-of-the-art source separation models to remove vocals
 [UVR5 models overview (Rus/Eng)](https://github.com/LeeAeron/ultimatevocalremovergui/blob/main/UVR5_models.md) 
 
 
+## Instalation
+
 ### 🖥️ Windows Installation
 
 This UVR will be provided with only *.bat installer/re-installer/starter file, that will download and install all components and build Portable UVR.
