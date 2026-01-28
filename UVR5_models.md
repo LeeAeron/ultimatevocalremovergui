@@ -85,7 +85,6 @@ Reverb HQ by FoxJoy: Подавление реверберации и эха.
 
 Эффективные модели: RoPE хорошо работает с линейным самовниманием, что ускоряет обучение и вывод результатов.
 
-
 ## 🔰 BS-Roformer (Band-Split Roformer)
 
 Использует архитектуру Roformer (Rotary Transformer), адаптированную для аудио.
@@ -151,6 +150,7 @@ Reverb HQ by FoxJoy: Подавление реверберации и эха.
 
 Качество: Ниже, чем у MDX и Roformer.
 
+
 ## 🧩 Kuielab Models
 
 ## 🔊 kuielab_a_vocals / bass / drums / other
@@ -195,7 +195,8 @@ Apollo — это метод моделирования полосовой по�
 
 Модель ориентирована на музыку, а не на речь (для речи лучше использовать UVR или Demucs).
 
-##ENG
+
+## ENG
 
 ## 🧩 MDX-Net Models
 
@@ -279,7 +280,6 @@ Music and audio: RoFormer is adapted for audio source separation tasks (e.g., vo
 
 Efficient models: RoPE works well with linear self-attention, which speeds up training and inference.
 
-
 ## 🔰 BS-Roformer (Band-Split Roformer)
 
 Uses the Roformer (Rotary Transformer) architecture adapted for audio.
@@ -327,6 +327,7 @@ Well suited for low-end PCs and laptops.
 
 Cons: Separation quality is lower than that of MDX-Net and Roformer.
 
+
 ## 🧰 VR Arch v1/v2/v3
 Architecture: Classic CNN.
 
@@ -335,6 +336,7 @@ Purpose: Basic vocal/instrumental separation.
 Load: Low, suitable for low-end PCs.
 
 Quality: Lower than MDX and Roformer.
+
 
 ## 🧩 Kuielab Models
 
@@ -379,4 +381,3 @@ The main goal: restoring music distorted by codecs (especially at low bitrates).
 Works in the frequency domain: it divides the spectrogram into subbands, models temporal and spectral dependencies, and restores high-frequency details.
 
 The model is focused on music, not speech (for speech, it is better to use UVR or Demucs).
-
