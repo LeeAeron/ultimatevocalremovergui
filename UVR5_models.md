@@ -2,9 +2,10 @@
 
 ## RUS
 
-🧩 MDX-Net Models
 
-🔰 MDX-Net v1/v2
+## 🧩 MDX-Net Models
+
+## 🔰 MDX-Net v1/v2
 Основаны на архитектуре Multi-Dilated Convolutional Networks (MDX).
 
 Отличаются высокой точностью при разделении вокала и инструментов. 
@@ -12,17 +13,15 @@
 Подходят для большинства жанров, особенно для чистых студийных записей.
 
 Минус: относительно высокая нагрузка на GPU/CPU.
-__________________________________________________________________________________________
 
-🔰 MDX23C
+## 🔰 MDX23C
 Оптимизированная версия MDX-Net с улучшенной скоростью и меньшими требованиями к памяти.
 
 Добавлен режим denoise, который помогает убирать шумы и артефакты.
 
 Хорошо работает на живых записях и сложных миксах.
-________________________________________________________________________________________
 
-🎛 UVR-MDX-NET Inst HQ 1–5
+## 🎛 UVR-MDX-NET Inst HQ 1–5
 Назначение: Отделение инструментала от вокала.
 
 HQ1–HQ5: Чем выше номер, тем выше качество и нагрузка.
@@ -32,40 +31,35 @@ HQ2/3 — лучше вытаскивают длинный вокал.
 HQ4/5 — дают чуть чище результат, но медленнее.
 
 Архитектура: Full-band MDX-Net.
-________________________________________________________________________________________
 
-🎚 UVR-MDX-NET Inst 1–3
+## 🎚 UVR-MDX-NET Inst 1–3
 Назначение: Более лёгкие модели для инструментала.
 
 Особенности: Могут оставлять вокальный хвост, но звучат натуральнее.
 
 Нагрузка: Ниже, чем HQ-серия.
-________________________________________________________________________________________
 
-⚖ UVR-MDX-NET Main / Inst Main
+## ⚖ UVR-MDX-NET Main / Inst Main
 Назначение: Универсальные модели для вокал/инструментал.
 
 Баланс: Хорошее качество при умеренной нагрузке.
 
 Применение: Базовые модели для ансамблей.
-________________________________________________________________________________________
 
-🎤 UVR-MDX-NET Karaoke / Karaoke 2
+## 🎤 UVR-MDX-NET Karaoke / Karaoke 2
 Назначение: Удаление лид-вокала, сохранение фоновых голосов и инструментала.
 
 Применение: Создание караоке.
-________________________________________________________________________________________
 
-🧪 Специализированные MDX-модели
+## 🧪 Специализированные MDX-модели
 Voc FT / Kim Vocal: Заточены на извлечение вокала.
 
 Crowd HQ 1: Хорошо работает с концертами и "толпой".
 
 Reverb HQ by FoxJoy: Подавление реверберации и эха.
-________________________________________________________________________________________
-________________________________________________________________________________________
 
-🔄 Roformer Models
+
+## 🔄 Roformer Models
 
 ▪️RoFormer — это улучшенная архитектура Transformer, использующая встраивание вращающихся позиций (RoPE) для более эффективного кодирования позиций токенов в последовательности. Это позволяет моделям лучше учитывать как абсолютные, так и относительные зависимости между текстовыми элементами и масштабироваться до длинных последовательностей.
 
@@ -92,7 +86,7 @@ ________________________________________________________________________________
 Эффективные модели: RoPE хорошо работает с линейным самовниманием, что ускоряет обучение и вывод результатов.
 
 
-🔰 BS-Roformer (Band-Split Roformer)
+## 🔰 BS-Roformer (Band-Split Roformer)
 
 Использует архитектуру Roformer (Rotary Transformer), адаптированную для аудио.
 
@@ -102,24 +96,22 @@ ________________________________________________________________________________
 
 Минус: требует больше ресурсов, чем MDX23C.
 
-🔰 ViperX Roformer
+## 🔰 ViperX Roformer
 
 Вариант Roformer, оптимизированный для скорости.
 
 Подходит для потоковой обработки и быстрой сегментации.
 
 Чуть уступает BS-Roformer по качеству, но выигрывает в производительности.
-________________________________________________________________________________________
 
-🧬 MDX23C InstVoc HQ
+## 🧬 MDX23C InstVoc HQ
 Архитектура: Гибрид MDX + спектральная точность.
 
 Назначение: Одновременное извлечение вокала и инструментала.
 
 Качество: Один из лучших SDR на современных тестах.
-________________________________________________________________________________________
 
-🧠 BS-Roformer-Viperx (1297, 1296, 1053, 1143)
+## 🧠 BS-Roformer-Viperx (1297, 1296, 1053, 1143)
 Архитектура: Band-Split Roformer.
 
 Авторы: Viperx и др.
@@ -127,19 +119,18 @@ ________________________________________________________________________________
 Особенности: Максимальное качество, высокая VRAM нагрузка.
 
 1297: Часто в топе таблиц качества.
-________________________________________________________________________________________
 
-🎵 MelBand Roformer Kim
+## 🎵 MelBand Roformer Kim
 Варианты: InstV1/V2, InstVoc Duality, InstV1(E).
 
 Назначение: Чистый инструментал или парное разделение.
 
 Особенности: Разные параметры и тренировочные датасеты.
 
-========================================================================================
 
-🎶 VR-Architecture Models
-VR Arch v1/v2/v3
+## 🎶 VR-Architecture Models
+
+## VR Arch v1/v2/v3
 
 Классическая линейка моделей UVR (Ultimate Vocal Remover).
 
@@ -150,9 +141,8 @@ VR Arch v1/v2/v3
 Хорошо подходят для слабых ПК и ноутбуков.
 
 Минус: качество разделения ниже, чем у MDX-Net и Roformer.
-________________________________________________________________________________________
 
-🧰 VR Arch v1/v2/v3
+## 🧰 VR Arch v1/v2/v3
 Архитектура: Классическая CNN.
 
 Назначение: Базовое разделение вокала/инструментала.
@@ -160,20 +150,18 @@ ________________________________________________________________________________
 Нагрузка: Низкая, подходит для слабых ПК.
 
 Качество: Ниже, чем у MDX и Roformer.
-________________________________________________________________________________________
 
-🧩 Kuielab Models
-🔊 kuielab_a_vocals / bass / drums / other
+## 🧩 Kuielab Models
+
+## 🔊 kuielab_a_vocals / bass / drums / other
 Назначение: Разделение на 4 стема.
 
 Качество: Хорошее, умеренная нагрузка.
-________________________________________________________________________________________
 
-🔊 kuielab_b_vocals / bass / drums / other
+##  🔊 kuielab_b_vocals / bass / drums / other
 Назначение: Улучшенная серия.
 
 Особенности: b_vocals — агрессивный экстрактор вокала.
-________________________________________________________________________________________
 
 
 ## UVR5 Model Overview
@@ -194,7 +182,6 @@ ________________________________________________________________________________
 | kuielab_a_vocals/bass/drums/other    | Стем-разделение            | CNN                 | Хорошее      | Средняя       | 4 канала: вокал, бас, ударные, остальное |
 | kuielab_b_vocals/bass/drums/other    | Улучшенное стем-разделение | CNN                 | Очень хорошее| Средне–высокая| b_vocals — агрессивный экстрактор        |
 
-=========================================================================================
 
 ## 💿 Что такое Apollo
 
@@ -209,12 +196,9 @@ Apollo — это метод моделирования полосовой по�
 Модель ориентирована на музыку, а не на речь (для речи лучше использовать UVR или Demucs).
 
 
-##########################################################################################
-
-
 ##ENG
 
-🧩 MDX-Net Models
+## 🧩 MDX-Net Models
 
 🔰 MDX-Net v1/v2
 Based on the Multi-Dilated Convolutional Networks (MDX) architecture.
@@ -224,17 +208,15 @@ They are characterized by high accuracy in separating vocals and instruments.
 Suitable for most genres, especially clean studio recordings.
 
 Con: Relatively high GPU/CPU load.
-__________________________________________________________________________________________
 
-🔰 MDX23C
+## 🔰 MDX23C
 Optimized version of MDX-Net with improved speed and lower memory requirements.
 
 Added denoise mode, which helps remove noise and artifacts.
 
 Works well on live recordings and complex mixes.
-________________________________________________________________________________________
 
-🎛 UVR-MDX-NET Inst HQ 1–5
+## 🎛 UVR-MDX-NET Inst HQ 1–5
 Purpose: Separating instrumentals from vocals.
 
 HQ1–HQ5: The higher the number, the higher the quality and load.
@@ -244,40 +226,35 @@ HQ2/3 — better at extracting long vocals.
 HQ4/5 — produce slightly cleaner results, but slower.
 
 Architecture: Full-band MDX-Net.
-________________________________________________________________________________________
 
-🎚 UVR-MDX-NET Inst 1–3
+## 🎚 UVR-MDX-NET Inst 1–3
 Purpose: Lighter models for instrumentals.
 
 Features: May leave vocal tails, but sound more natural.
 
 Power handling: Lower than the HQ series.
-________________________________________________________________________________________
 
-⚖ UVR-MDX-NET Main / Inst Main
+## ⚖ UVR-MDX-NET Main / Inst Main
 Purpose: General-purpose models for vocals/instruments.
 
 Balance: Good quality at moderate power handling.
 
 Use: Basic models for ensembles.
-________________________________________________________________________________________
 
-🎤 UVR-MDX-NET Karaoke / Karaoke 2
+## 🎤 UVR-MDX-NET Karaoke / Karaoke 2
 Purpose: Removing lead vocals, preserving background vocals and instrumentals.
 
 Application: Karaoke production.
-________________________________________________________________________________________
 
-🧪 Specialized MDX Models
+## 🧪 Specialized MDX Models
 Voc FT / Kim Vocal: Focused on vocal extraction.
 
 Crowd HQ 1: Works well with concerts and crowds.
 
 Reverb HQ by FoxJoy: Suppresses reverberation and echo.
-________________________________________________________________________________________
-________________________________________________________________________________________
 
-🔄 Roformer Models
+
+## 🔄 Roformer Models
 
 ▪️RoFormer is an improved Transformer architecture that uses Rotary Position Embedding (RoPE) to more efficiently encode token positions in a sequence. This allows models to better account for both absolute and relative dependencies between text elements and scale to long sequences.
 
@@ -304,7 +281,7 @@ Music and audio: RoFormer is adapted for audio source separation tasks (e.g., vo
 Efficient models: RoPE works well with linear self-attention, which speeds up training and inference.
 
 
-🔰 BS-Roformer (Band-Split Roformer)
+## 🔰 BS-Roformer (Band-Split Roformer)
 
 Uses the Roformer (Rotary Transformer) architecture adapted for audio.
 
@@ -314,24 +291,22 @@ Distinguished by better processing of long contexts and complex vocal parts.
 
 Con: Requires more resources than the MDX23C.
 
-🔰 ViperX Roformer
+## 🔰 ViperX Roformer
 
 A speed-optimized Roformer variant.
 
 Suitable for streaming processing and fast segmentation.
 
 Slightly inferior to BS-Roformer in quality, but superior in performance.
-________________________________________________________________________________________
 
-🧬 MDX23C InstVoc HQ
+## 🧬 MDX23C InstVoc HQ
 Architecture: Hybrid MDX + spectral accuracy.
 
 Purpose: Simultaneous extraction of vocals and instrumentals.
 
 Quality: One of the best SDRs in modern tests.
-________________________________________________________________________________________
 
-🧠 BS-Roformer-Viperx (1297, 1296, 1053, 1143)
+## 🧠 BS-Roformer-Viperx (1297, 1296, 1053, 1143)
 Architecture: Band-Split Roformer.
 
 Creators: Viperx and others.
@@ -339,23 +314,21 @@ Creators: Viperx and others.
 Features: Maximum quality, high VRAM load.
 
 1297: Frequently at the top of quality charts.
-________________________________________________________________________________________
 
-🎵 MelBand Roformer Kim
+## 🎵 MelBand Roformer Kim
 Variants: InstV1/V2, InstVoc Duality, InstV1(E).
 
 Purpose: Pure instrumental or paired separation.
 
 Features: Various parameters and training datasets.
 
-== ... They are characterized by stability and low resource requirements.
+They are characterized by stability and low resource requirements.
 
 Well suited for low-end PCs and laptops.
 
 Cons: Separation quality is lower than that of MDX-Net and Roformer.
-________________________________________________________________________________________
 
-🧰 VR Arch v1/v2/v3
+## 🧰 VR Arch v1/v2/v3
 Architecture: Classic CNN.
 
 Purpose: Basic vocal/instrumental separation.
@@ -363,20 +336,18 @@ Purpose: Basic vocal/instrumental separation.
 Load: Low, suitable for low-end PCs.
 
 Quality: Lower than MDX and Roformer.
-________________________________________________________________________________________
 
-🧩 Kuielab Models
-🔊 kuielab_a_vocals / bass / drums / other
+## 🧩 Kuielab Models
+
+## 🔊 kuielab_a_vocals / bass / drums / other
 Purpose: Separation into 4 stems.
 
 Quality: Good, moderate load.
-________________________________________________________________________________________
 
-🔊 kuielab_b_vocals / bass / drums / other
+## 🔊 kuielab_b_vocals / bass / drums / other
 Purpose: Improved series.
 
 Features: b_vocals is an aggressive vocal extractor.
-________________________________________________________________________________________
 
 
 ## UVR5 Model Overview
@@ -397,7 +368,6 @@ ________________________________________________________________________________
 | kuielab_a_vocals/bass/drums/other     | Stem Separation           | CNN                 | Good      | Medium        | 4 channels: vocals, bass, drums, other |
 | kuielab_b_vocals/bass/drums/other     | Enhanced Stem Separation  | CNN                 | Very Good | Medium-High   | b_vocals — Aggressive Extractor        |
 
-========================================================================================
 
 ## 💿 What is Apollo
 
