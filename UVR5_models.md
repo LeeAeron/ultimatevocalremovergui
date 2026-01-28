@@ -354,7 +354,7 @@ Features: b_vocals is an aggressive vocal extractor.
 ## UVR5 Model Overview
 
 | Model                                 | Purpose                   | Architecture        | Quality   | Load Capacity | Features                               |
-|---------------------------------------|---------------------------|---------------------|-----------|--------------------------------------------------------|
+|---------------------------------------|---------------------------|---------------------|-----------|---------------|----------------------------------------|
 | UVR-MDX-NET Inst HQ 1–5               | Instrumental/Vocal        | MDX-Net Full-band   | Very High | Medium-High   | HQ3/4 — Best Balance                   |
 | UVR-MDX-NET Inst 1–3                  | Instrumental              | MDX-Net             | Medium    | Low           | Natural                                |
 | UVR-MDX-NET Main / Inst Main          | Versatile Separation      | MDX-Net             | Good      | Average       | Basic Ensemble Models                  |
