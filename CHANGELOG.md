@@ -4,12 +4,12 @@
 - fix to fit old Pascal arch in Apollo models code
 - added two-way installation choice in .bat menu: GTX10xx (Pascal) and GTX16xx-RTX20xx-RTX50xx
 
-# 2026/01/27(28) (v5.7.2)
+# 2026/01/27 (v5.7.2)
 - updated requirements
 - fixed MDX processing/VR-Architecture processing
 - fixed librosa calls in code
 
-# 2026/01/27(28) (v5.7.1)
+# 2026/01/27 (v5.7.1)
 
 - fixed code for load Apollo models with new Torch
 - added Apollo audio restore model by default
