@@ -1,5 +1,9 @@
 #Changelog:
 
+# 2026/01/29 (v5.7.4)
+- urgent UVR code security fixes (cause Microsoft Defender force delete main py code)
+- deleted all .exe calls from code (cuz I'm using .py only)
+
 # 2026/01/28 (v5.7.3)
 - fix to fit old Pascal arch in Apollo models code
 - added two-way installation choice in .bat menu: GTX10xx (Pascal) and GTX16xx-RTX20xx-RTX50xx

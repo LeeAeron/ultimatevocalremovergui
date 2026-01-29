@@ -31,9 +31,6 @@ from tkinter import filedialog
 from tkinter import messagebox
 from collections import Counter
 from __version__ import VERSION, PATCH
-from cryptography.fernet import Fernet
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from datetime import datetime
 from gui_data.constants import *
 from gui_data.app_size_values import *
@@ -55,6 +52,7 @@ import onnx
 import re
 import sys
 import yaml
+from ctypes import windll, wintypes
 from ml_collections import ConfigDict
 from collections import Counter
 from os.path import expanduser
@@ -102,64 +100,27 @@ PREVIOUS_PATCH_WIN = 'UVR_Patch_10_6_23_4_27'
 is_dnd_compatible = True
 banner_placement = -2
 
-if OPERATING_SYSTEM=="Darwin":
-    OPEN_FILE_func = lambda input_string:subprocess.Popen(["open", input_string])
-    dnd_path_check = MAC_DND_CHECK
-    banner_placement = -8
-    is_windows = False
-    is_macos = True
-    right_click_button = '<Button-2>'
-    application_extension = ".dmg"
-elif OPERATING_SYSTEM=="Linux":
-    OPEN_FILE_func = lambda input_string:subprocess.Popen(["xdg-open", input_string])
-    dnd_path_check = LINUX_DND_CHECK
-    is_windows = False
-    is_macos = False
-    right_click_button = '<Button-3>'
-    application_extension = ".zip"
-elif OPERATING_SYSTEM=="Windows":
+if OPERATING_SYSTEM=="Windows":
     OPEN_FILE_func = lambda input_string:os.startfile(input_string)
     dnd_path_check = WINDOWS_DND_CHECK
     current_patch = PATCH
     is_windows = True
     is_macos = False
     right_click_button = '<Button-3>'
-    application_extension = ".exe"
 
-def right_click_release_linux(window, top_win=None):
-    if OPERATING_SYSTEM=="Linux":
-        root.bind('<Button-1>', lambda e:window.destroy())
-        if top_win:
-            top_win.bind('<Button-1>', lambda e:window.destroy())
-
-if not is_windows:
-    import ssl
-    ssl._create_default_https_context = ssl._create_unverified_context
-else:
-    from ctypes import windll, wintypes
     
-def close_process(q:queue.Queue):
+def close_process(q: queue.Queue, window=None):
     def close_splash():
-        name = "UVR_Launcher.exe"
-        for process in psutil.process_iter(attrs=["name"]):
-            process_name = process.info.get("name")
-            
-            if process_name == name:
-                try:
-                    process.terminate()
-                    q.put(f"{name} terminated.")  # Push message to queue
-                    break
-                except psutil.NoSuchProcess as e:
-                    q.put(f"Error terminating {name}: {e}")  # Push error to queue
-                    
-                    try:
-                        with open(SPLASH_DOC, 'w') as f:
-                            f.write('1')
-                    except:
-                        print('No splash screen.')
+        try:
+            if window is not None:
+                window.destroy()
+            q.put("Application closed.")
+        except Exception as e:
+            q.put(f"Error closing window: {e}")
 
     thread = KThread(target=close_splash)
     thread.start()
+
 
 def save_data(data):
     """
@@ -5663,25 +5624,16 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.is_online = False
 
     def download_validate_code(self, confirm=False, code_message=None):
-        """Verifies the VIP download code"""
-        
-        self.decoded_vip_link = vip_downloads(self.user_code_var.get())
-        
+        """VIP download code validation disabled in portable version"""
+        self.decoded_vip_link = NO_CODE
         if confirm:
-            if not self.decoded_vip_link == NO_CODE:
-                info_text = 'VIP Models Added!'
-                is_success_message = True
-            else:
-                info_text = 'Incorrect Code'
-                is_success_message = False
-                
+            info_text = 'VIP downloads disabled'
+            is_success_message = False
             self.download_progress_info_var.set(info_text)
             self.user_code_validation_var.set(info_text)
-            
             if code_message:
                 code_message(info_text, is_success_message)
-                
-            self.download_list_fill()
+
 
     def download_list_fill(self, model_type=ALL_TYPES):
         """Fills the download lists with the data retrieved from the update check."""
@@ -7760,9 +7712,9 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             
             if is_restart:
                 try:
-                    subprocess.Popen(f'UVR_Launcher.exe')
-                except Exception:
                     subprocess.Popen(f'python "{__file__}"', shell=True)
+                except Exception as e:
+                    print(f"Restart failed: {e}")
             
             self.destroy()
             
@@ -7821,21 +7773,9 @@ def auto_hyperlink(text_widget:tk.Text):
         text_widget.tag_bind(url, "<Leave>", lambda e: text_widget.config(cursor="arrow"))
 
 def vip_downloads(password, link_type=VIP_REPO):
-    """Attempts to decrypt VIP model link with given input code"""
-    
-    try:
-        kdf = PBKDF2HMAC(
-            algorithm=hashes.SHA256(),
-            length=32,
-            salt=link_type[0],
-            iterations=390000,)
+    """VIP downloads disabled in portable version"""
+    return NO_CODE
 
-        key = base64.urlsafe_b64encode(kdf.derive(bytes(password, 'utf-8')))
-        f = Fernet(key)
-
-        return str(f.decrypt(link_type[1]), 'UTF-8')
-    except Exception:
-        return NO_CODE
 
 def extract_stems(audio_file_base, export_path):
     
