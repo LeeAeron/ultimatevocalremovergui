@@ -122,6 +122,10 @@ def close_process(q: queue.Queue, window=None):
     thread.start()
 
 
+def right_click_release_linux(menu):
+    pass
+
+
 def save_data(data):
     """
     Saves given data as a .pkl (pickle) file
