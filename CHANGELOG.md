@@ -1,5 +1,8 @@
 #Changelog:
 
+# 2026/01/31 (v5.7.4.1)
+- fixed 'right click menu' issue
+
 # 2026/01/29 (v5.7.4)
 - urgent UVR code security fixes (cause Microsoft Defender force delete main py code)
 - deleted all .exe calls from code (cuz I'm using .py only)
